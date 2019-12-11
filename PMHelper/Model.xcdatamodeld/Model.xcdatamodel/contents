@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Relation" representedClassName="Relation" syncable="YES" codeGenerationType="class">
+        <attribute name="resourceID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="toResource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Resource" inverseName="task" inverseEntity="Resource" syncable="YES"/>
+        <relationship name="toTask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="resource" inverseEntity="Task" syncable="YES"/>
+    </entity>
+    <entity name="Resource" representedClassName="Resource" syncable="YES" codeGenerationType="class">
+        <attribute name="costUse" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="material" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="max" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="overtime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="resourceID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="resourceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="task" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relation" inverseName="toResource" inverseEntity="Relation" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finishDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="taskName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="resource" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Relation" inverseName="toTask" inverseEntity="Relation" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Resource" positionX="-31.93359375" positionY="-89.08984375" width="128" height="178"/>
+        <element name="Task" positionX="-580.546875" positionY="-75.14453125" width="128" height="133"/>
+        <element name="Relation" positionX="-320.234375" positionY="-64.55859375" width="128" height="103"/>
+    </elements>
+</model>
