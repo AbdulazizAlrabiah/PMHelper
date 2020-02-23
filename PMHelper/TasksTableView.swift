@@ -34,7 +34,6 @@ class TasksTableView: UIViewController {
         
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-        
     }
     
     override func viewDidLoad() {
